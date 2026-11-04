@@ -1,0 +1,10 @@
+{
+  "title": "Bulgaria - City from ZIP",
+  "summary": "City and province from the Bulgarian postal code",
+  "edition": "community",
+  "features": [
+    "28 provinces and GeoNames localities",
+    "City and province from the ZIP",
+    "Bulk link of existing contacts"
+  ]
+}

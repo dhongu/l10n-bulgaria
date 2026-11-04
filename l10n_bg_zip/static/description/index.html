@@ -1,0 +1,135 @@
+<div class="mx-auto px-3 py-3 rounded-4" style="max-width:1100px;font-family:'Segoe UI','Avenir Next','Helvetica Neue',Arial,sans-serif;color:#212529;font-weight:400;background-color:#ffffff;--bs-body-color:#212529;--bs-body-bg:#ffffff;--bs-emphasis-color:#212529;--bs-border-color:#dee2e6;--bs-card-bg:#ffffff;--bs-card-color:#212529;--bs-card-border-color:#dee2e6;--bs-link-color:#006F42;--bs-link-hover-color:#00432a;--bs-nav-link-color:#212529;--bs-nav-pills-link-active-bg:#006F42;--bs-nav-pills-link-active-color:#ffffff;--bs-code-color:#b4266b;--bs-heading-color:#212529;">
+<!-- tb-gen v1 -->
+<div class="rounded-4 shadow px-4 py-4 mt-2 mb-4" style="background-color:#006F42;color:#ffffff;">
+  <div class="d-flex flex-wrap align-items-center">
+    <span class="d-inline-block rounded-4 p-2 flex-shrink-0 my-2" style="background-color:#ffffff;margin-right:24px;"><img src="icon.png" alt="Bulgaria - City from ZIP" style="width:80px;height:80px;border:none;"/></span>
+    <div class="flex-grow-1 my-2" style="width:320px;min-width:0;margin-right:24px;">
+      <h1 class="fw-bold mb-2" style="color:#ffffff;font-size:36px;line-height:1.1;letter-spacing:-0.5px;border:none;">Bulgaria - City from ZIP</h1>
+      <p class="mb-3" style="font-size:18px;color:#cdeccf;line-height:1.45;">City and province from the Bulgarian postal code</p>
+      <div>
+        <span class="d-inline-block rounded-pill fw-bold me-2 mb-2" style="background-color:#ffffff;border:1px solid #ffffff;color:#006F42;padding:6px 14px;font-size:12px;">Odoo 19.0</span>
+        <span class="d-inline-block rounded-pill fw-semibold me-2 mb-2" style="border:1px solid #8fd1ad;color:#ffffff;padding:6px 14px;font-size:12px;">Localization</span>
+        <span class="d-inline-block rounded-pill fw-semibold me-2 mb-2" style="border:1px solid #8fd1ad;color:#ffffff;padding:6px 14px;font-size:12px;">Odoo.sh &bull; On-premise</span>
+        <span class="d-inline-block rounded-pill fw-semibold me-2 mb-2" style="border:1px dashed #8fd1ad;color:#ffffff;padding:6px 14px;font-size:12px;">LGPL-3</span>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="d-flex align-items-start rounded-4 px-4 py-3 mb-4" style="background-color:#DEF1DD;color:#212529;">
+  <span class="flex-shrink-0 me-3" style="font-size:26px;line-height:1.2;color:#006F42;">&#9733;</span>
+  <div style="font-size:16px;line-height:1.55;">
+    <span class="fw-bold" style="color:#006F42;">Did this module help you?</span> It is free, built and maintained by the Terrabit developers. If it saved you time, a rating on this page is the best way to say thanks &mdash; and it helps other Odoo users find it too. Thank you for your support!
+  </div>
+</div>
+
+<ul class="nav nav-pills justify-content-center mb-4 pb-3 border-bottom" style="--bs-nav-pills-link-active-bg:#006F42;">
+  <li class="nav-item mx-1 mb-2">
+    <a class="nav-link active fw-semibold rounded-pill border" id="tb-tab-overview"
+       data-bs-toggle="pill" data-bs-target="#tb-panel-overview" href="#tb-panel-overview"
+       style="padding:10px 22px;">Overview</a>
+  </li>
+  <li class="nav-item mx-1 mb-2">
+    <a class="nav-link fw-semibold rounded-pill border" id="tb-tab-usage"
+       data-bs-toggle="pill" data-bs-target="#tb-panel-usage" href="#tb-panel-usage"
+       style="padding:10px 22px;">Usage</a>
+  </li>
+  <li class="nav-item mx-1 mb-2">
+    <a class="nav-link fw-semibold rounded-pill border" id="tb-tab-versions"
+       data-bs-toggle="pill" data-bs-target="#tb-panel-versions" href="#tb-panel-versions"
+       style="padding:10px 22px;">Versions</a>
+  </li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane fade show active py-2" id="tb-panel-overview" style="font-size:16px;line-height:1.65;color:#212529;font-weight:400;">
+<h2 class="fw-bold mb-3" style="border:none;border-left:4px solid #57B952;padding-left:16px;font-size:24px;letter-spacing:-0.3px;line-height:1.2;">Overview</h2>
+<p class="mb-4" style="font-size:16px;line-height:1.65;max-width:780px;">Loads the 28 Bulgarian provinces (oblasti) and the Bulgarian localities with their postal
+code, and fills in the city and the province of Bulgarian addresses from the postal code.</p>
+<ul class="list-unstyled row row-cols-1 row-cols-md-2 g-2 mt-1 mb-4"><li class="col"><div class="border rounded-3 px-3 py-2 h-100 d-flex gap-2"><span class="flex-shrink-0 text-center fw-bold rounded d-inline-block" style="background-color:#57B952;color:#04331f;width:22px;height:22px;line-height:22px;font-size:13px;">&#10003;</span><div>Creates the 28 provinces with their ISO 3166-2:BG code. Provinces already entered by hand
+  (in Latin or in Cyrillic, with or without "Province") are reused and their duplicates
+  merged, so the database does not get a second set.</div></div></li><li class="col"><div class="border rounded-3 px-3 py-2 h-100 d-flex gap-2"><span class="flex-shrink-0 text-center fw-bold rounded d-inline-block" style="background-color:#57B952;color:#04331f;width:22px;height:22px;line-height:22px;font-size:13px;">&#10003;</span><div>Ships the list of Bulgarian localities with their postal code, from
+  <a href="https://www.geonames.org">GeoNames</a> (Creative Commons Attribution 4.0). The names are in
+  Latin, with the official Bulgarian transliteration (Haskovo, Vratsa, Targovishte); the
+  Cyrillic names are the Bulgarian translation, shown to the users working in Bulgarian.</div></div></li><li class="col"><div class="border rounded-3 px-3 py-2 h-100 d-flex gap-2"><span class="flex-shrink-0 text-center fw-bold rounded d-inline-block" style="background-color:#57B952;color:#04331f;width:22px;height:22px;line-height:22px;font-size:13px;">&#10003;</span><div>Bulgaria is set to <em>enforce cities</em>: the city of a Bulgarian address is chosen from the list.</div></div></li><li class="col"><div class="border rounded-3 px-3 py-2 h-100 d-flex gap-2"><span class="flex-shrink-0 text-center fw-bold rounded d-inline-block" style="background-color:#57B952;color:#04331f;width:22px;height:22px;line-height:22px;font-size:13px;">&#10003;</span><div>On the contact form, typing the postal code of a Bulgarian address sets the city and the
+  province. A postal code shared by several localities sets only the province; the city name,
+  when it matches one of them (in Latin or in Cyrillic, without accents and case), picks the
+  locality. A "BG-" prefix is dropped.</div></div></li><li class="col"><div class="border rounded-3 px-3 py-2 h-100 d-flex gap-2"><span class="flex-shrink-0 text-center fw-bold rounded d-inline-block" style="background-color:#57B952;color:#04331f;width:22px;height:22px;line-height:22px;font-size:13px;">&#10003;</span><div>The action <em>Bulgaria: set city from ZIP</em> on contacts links the Bulgarian contacts to the
+  city of their postal code and fills in the province.</div></div></li><li class="col"><div class="border rounded-3 px-3 py-2 h-100 d-flex gap-2"><span class="flex-shrink-0 text-center fw-bold rounded d-inline-block" style="background-color:#57B952;color:#04331f;width:22px;height:22px;line-height:22px;font-size:13px;">&#10003;</span><div>At install, the Bulgarian contacts are linked: directly on a small database, by the
+  scheduled action <em>Bulgaria: link contacts to the city of their ZIP</em> in batches on a large
+  one (it deactivates itself when done).</div></div></li><li class="col"><div class="border rounded-3 px-3 py-2 h-100 d-flex gap-2"><span class="flex-shrink-0 text-center fw-bold rounded d-inline-block" style="background-color:#57B952;color:#04331f;width:22px;height:22px;line-height:22px;font-size:13px;">&#10003;</span><div>Every form that runs the postal code rules of the contact (for example the delivery details
+  of an AWB, with <code class="border rounded px-2" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;">deltatech_delivery</code>) gets the city and the province filled in.</div></div></li></ul>
+</div>
+<div class="tab-pane fade py-2" id="tb-panel-usage" style="font-size:16px;line-height:1.65;color:#212529;font-weight:400;">
+<h2 class="fw-bold mb-3" style="border:none;border-left:4px solid #57B952;padding-left:16px;font-size:24px;letter-spacing:-0.3px;line-height:1.2;">Usage</h2>
+<ol>
+<li>As an administrator, open <strong>Contacts &#8594; Configuration &#8594; Localization &#8594; Cities</strong> and search
+   for a postal code: the Bulgarian localities of that code are listed with their province.</li>
+</ol>
+<p><img class="img-fluid d-block" style="max-width:100%;height:auto;" alt="Cities list filtered on the postal code 5300: 32 localities of the province Gabrovo (BG)" src="en/01_lista_localitati_cap.png" /></p>
+<ol start="2">
+<li>Open a Bulgarian contact and type the postal code in the address: the city and the
+   province are filled in.</li>
+</ol>
+<p><img class="img-fluid d-block" style="max-width:100%;height:auto;" alt="Contact in Bulgaria: the postal code 6300 fills in the city Haskovo (6300) and the state Haskovo (BG)" src="en/02_partener_cap_unic.png" /></p>
+<ol start="3">
+<li>When the postal code is shared by several localities, only the province is filled in;
+   choose the city from the list (type the postal code or the name in the city field).</li>
+</ol>
+<p><img class="img-fluid d-block" style="max-width:100%;height:auto;" alt="Contact in Bulgaria: the postal code 5300 fills in the state Gabrovo (BG); the city field lists the localities of 5300" src="en/03_partener_cap_comun.png" /></p>
+<ol start="4">
+<li>To complete existing or imported contacts, select them in the list and run
+   <em>Actions &#8594; Bulgaria: set city from ZIP</em>.</li>
+</ol>
+<p><img class="img-fluid d-block" style="max-width:100%;height:auto;" alt="Contacts list with Bulgarian contacts selected and the Actions menu open on Bulgaria: set city from ZIP" src="en/04_actiune_contacte_existente.png" /></p>
+<p><img class="img-fluid d-block" style="max-width:100%;height:auto;" alt="Contact Klient Plovdiv after the action: ZIP 4000, city Plovdiv (4000) and state Plovdiv (BG)" src="en/05_contact_dupa_actiune.png" /></p>
+<p>The localities are named in Latin; with the Bulgarian language installed, users working in
+Bulgarian see them in Cyrillic.</p>
+</div>
+<div class="tab-pane fade py-2" id="tb-panel-versions" style="font-size:16px;line-height:1.65;color:#212529;font-weight:400;">
+<h2 class="fw-bold mb-3" style="border:none;border-left:4px solid #57B952;padding-left:16px;font-size:24px;letter-spacing:-0.3px;line-height:1.2;">Versions</h2>
+<h2 class="fw-bold mt-4 mb-3" style="border:none;border-left:4px solid #57B952;padding-left:16px;font-size:24px;letter-spacing:-0.3px;line-height:1.2;">19.0.1.0.0 (2026-11-04)</h2>
+<p><strong>Added</strong></p>
+<ul>
+<li>The 28 Bulgarian provinces (ISO 3166-2:BG), reusing the provinces already in the database.</li>
+<li>Bulgarian localities with postal code, from GeoNames, named in Latin with the Cyrillic
+  names as Bulgarian translation.</li>
+<li>City and province filled in from the postal code on Bulgarian addresses; action and
+  scheduled action to link the existing contacts.</li>
+<li>Consultant sheet (readme/FISA_CONSULTANT.md) and screenshots, in Romanian and English.</li>
+</ul>
+</div>
+</div>
+
+<div class="row text-center mt-4 mb-1 g-3">
+  <div class="col-md-6">
+    <div class="border rounded-3 px-4 py-2 h-100">
+      <div class="fw-bold" style="font-size:2.2rem;color:#006F42;line-height:1;">350+</div>
+      <div class="mt-2" style="font-size:0.9rem;color:#3d4752;">Modules published on Odoo Apps</div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="border rounded-3 px-4 py-2 h-100">
+      <div class="fw-bold" style="font-size:2.2rem;color:#006F42;line-height:1;">Silver</div>
+      <div class="mt-2" style="font-size:0.9rem;color:#3d4752;">Odoo Partner &mdash; implementation &amp; support</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center rounded-4 px-4 pt-3 pb-4 mt-4 mb-3" style="background-color:#00432a;color:#ffffff;">
+  <h2 class="fw-bold mb-2" style="color:#ffffff;font-size:26px;letter-spacing:-0.3px;border:none;">Need help getting started?</h2>
+  <p class="mx-auto mb-2" style="color:#bfe3cc;max-width:660px;line-height:1.6;font-size:16px;">
+     Our 350+ apps on the Odoo Apps Store are used in Odoo implementations across Europe,
+     the Americas, Asia and Africa &mdash; by companies we have never even met. That is the
+     advantage of building modules that simply work.</p>
+  <p class="mx-auto mb-4" style="color:#bfe3cc;max-width:660px;line-height:1.6;font-size:16px;">
+     Questions about this module, or need it adapted to your processes?
+     Write to us &mdash; the developers who build it will answer.</p>
+  <a href="mailto:support@terrabit.ro" target="_blank" rel="noopener"
+     class="d-inline-block fw-bold text-decoration-none rounded-3"
+     style="background-color:#DEF1DD;color:#00432a;padding:14px 32px;font-size:15px;">Terrabit support &rarr;</a>
+</div>
+
+</div>

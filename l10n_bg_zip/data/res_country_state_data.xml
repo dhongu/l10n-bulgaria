@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- the 28 provinces (oblasti), ISO 3166-2:BG -->
+    <record id="state_bg_01" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">01</field>
+        <field name="name">Blagoevgrad</field>
+    </record>
+    <record id="state_bg_02" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">02</field>
+        <field name="name">Burgas</field>
+    </record>
+    <record id="state_bg_03" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">03</field>
+        <field name="name">Varna</field>
+    </record>
+    <record id="state_bg_04" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">04</field>
+        <field name="name">Veliko Tarnovo</field>
+    </record>
+    <record id="state_bg_05" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">05</field>
+        <field name="name">Vidin</field>
+    </record>
+    <record id="state_bg_06" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">06</field>
+        <field name="name">Vratsa</field>
+    </record>
+    <record id="state_bg_07" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">07</field>
+        <field name="name">Gabrovo</field>
+    </record>
+    <record id="state_bg_08" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">08</field>
+        <field name="name">Dobrich</field>
+    </record>
+    <record id="state_bg_09" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">09</field>
+        <field name="name">Kardzhali</field>
+    </record>
+    <record id="state_bg_10" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">10</field>
+        <field name="name">Kyustendil</field>
+    </record>
+    <record id="state_bg_11" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">11</field>
+        <field name="name">Lovech</field>
+    </record>
+    <record id="state_bg_12" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">12</field>
+        <field name="name">Montana</field>
+    </record>
+    <record id="state_bg_13" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">13</field>
+        <field name="name">Pazardzhik</field>
+    </record>
+    <record id="state_bg_14" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">14</field>
+        <field name="name">Pernik</field>
+    </record>
+    <record id="state_bg_15" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">15</field>
+        <field name="name">Pleven</field>
+    </record>
+    <record id="state_bg_16" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">16</field>
+        <field name="name">Plovdiv</field>
+    </record>
+    <record id="state_bg_17" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">17</field>
+        <field name="name">Razgrad</field>
+    </record>
+    <record id="state_bg_18" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">18</field>
+        <field name="name">Ruse</field>
+    </record>
+    <record id="state_bg_19" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">19</field>
+        <field name="name">Silistra</field>
+    </record>
+    <record id="state_bg_20" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">20</field>
+        <field name="name">Sliven</field>
+    </record>
+    <record id="state_bg_21" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">21</field>
+        <field name="name">Smolyan</field>
+    </record>
+    <record id="state_bg_22" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">22</field>
+        <field name="name">Sofia City</field>
+    </record>
+    <record id="state_bg_23" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">23</field>
+        <field name="name">Sofia</field>
+    </record>
+    <record id="state_bg_24" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">24</field>
+        <field name="name">Stara Zagora</field>
+    </record>
+    <record id="state_bg_25" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">25</field>
+        <field name="name">Targovishte</field>
+    </record>
+    <record id="state_bg_26" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">26</field>
+        <field name="name">Haskovo</field>
+    </record>
+    <record id="state_bg_27" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">27</field>
+        <field name="name">Shumen</field>
+    </record>
+    <record id="state_bg_28" model="res.country.state">
+        <field name="country_id" ref="base.bg" />
+        <field name="code">28</field>
+        <field name="name">Yambol</field>
+    </record>
+</odoo>
