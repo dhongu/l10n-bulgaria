@@ -15,8 +15,9 @@ regiuni** (oblasti) și **lista localităților din Bulgaria** (circa 5.300 de r
 localitatea și regiunea, pe fișa contactului și în orice formular care folosește regulile de cod
 poștal ale contactului (de exemplu detaliile AWB, cu `deltatech_delivery` de la versiunea
 19.0.6.12.3). Numele sunt în
-alfabet latin, cu transliterarea oficială bulgărească; utilizatorii care lucrează în bulgară le
-văd în chirilică.
+alfabet latin, cu transliterarea oficială bulgărească; utilizatorii care lucrează în bulgară văd
+localitățile în chirilică. Regiunile rămân în latină: în Odoo, numele unei regiuni nu se
+traduce.
 
 ## 2. Bază legală și context
 
@@ -66,8 +67,8 @@ localitate și regiune.
    direct, pe o bază mică, sau prin acțiunea programată **Bulgaria: leagă contactele de
    localitatea codului poștal**, pe loturi, pe o bază mare (se dezactivează singură când
    termină). Persoanele de contact ale unei firme nu sunt atinse: preiau adresa firmei.
-4. Pentru numele în chirilică, instalați limba bulgară (**Setări → Limbi**); fără ea, numele
-   rămân în latină.
+4. Pentru numele localităților în chirilică, instalați limba bulgară (**Setări → Limbi**); fără
+   ea, numele rămân în latină. Regiunile sunt mereu în latină.
 
 ## 6. Flux de utilizare
 
@@ -159,7 +160,7 @@ din codul poștal pe contact; legarea contactelor existente la instalare.
 
 **Ce rămâne manual:** alegerea localității când codul poștal e comun mai multor localități;
 rularea acțiunii **Bulgaria: completează localitatea din codul poștal** pe contactele importate
-după instalare; instalarea limbii bulgare, dacă se vor numele în chirilică.
+după instalare; instalarea limbii bulgare, dacă se vor numele localităților în chirilică.
 
 ## 8. Verificări pentru consultant
 
@@ -172,8 +173,8 @@ după instalare; instalarea limbii bulgare, dacă se vor numele în chirilică.
 - [ ] Un contact importat cu codul `BG-4000` și orașul *Plovdiv* primește, după acțiunea
       **Bulgaria: completează localitatea din codul poștal**, codul `4000`, localitatea *Plovdiv*
       și regiunea *Plovdiv (BG)*.
-- [ ] Cu limba bulgară instalată, un utilizator care lucrează în bulgară vede localitățile și
-      regiunile în chirilică (ex. *Пловдив*).
+- [ ] Cu limba bulgară instalată, un utilizator care lucrează în bulgară vede localitățile în
+      chirilică (ex. *Пловдив*); regiunile rămân în latină.
 - [ ] Contactele din alte țări rămân neschimbate după acțiune.
 - [ ] (Cu `deltatech_delivery` 19.0.6.12.3 sau mai nou) în **Carrier Details**, la o livrare către Bulgaria, codul poștal
       completează localitatea și regiunea.
