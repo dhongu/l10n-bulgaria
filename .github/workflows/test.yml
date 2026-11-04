@@ -1,0 +1,106 @@
+name: tests
+
+on:
+  pull_request:
+    branches:
+      - "19.0*"
+    # PR-urile care ating doar documentație, prezentare Apps Store sau traduceri
+    # nu pot schimba rezultatul testelor: sărim peste rulare.
+    paths-ignore:
+      - "**/*.md"
+      - "**/*.rst"
+      - "**/readme/**"
+      - "**/screenshots/**"
+      - "**/static/description/**"
+      - "**/i18n/**"
+  # Nightly full run: the ONLY run that measures coverage and uploads it to Codecov, once.
+  schedule:
+    - cron: "30 23 * * *"
+
+jobs:
+  unreleased-deps:
+    runs-on: ubuntu-latest
+    name: Detect unreleased dependencies
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          for reqfile in requirements.txt test-requirements.txt ; do
+              if [ -f ${reqfile} ] ; then
+                  result=0
+                  # reject non-comment lines that contain a / (i.e. URLs, relative paths)
+                  grep "^[^#].*/" ${reqfile} || result=$?
+                  if [ $result -eq 0 ] ; then
+                      echo "Unreleased dependencies found in ${reqfile}."
+                      exit 1
+                  fi
+              fi
+          done
+  test:
+    runs-on: ubuntu-22.04
+    container: ${{ matrix.container }}
+    name: ${{ matrix.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - container: ghcr.io/oca/oca-ci/py3.10-odoo19.0:latest
+            name: test with Odoo
+
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: odoo
+        ports:
+          - 5432:5432
+    env:
+      OCA_ENABLE_CHECKLOG_ODOO: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Requests2.27.0
+        run: |
+          pip install "requests>=2.27.0"
+      - name: Install addons and dependencies
+        run: oca_install_addons
+      - name: Check licenses
+        run: manifestoo -d . check-licenses
+      - name: Check development status
+        run: manifestoo -d . check-dev-status --default-dev-status=Beta
+      - name: Initialize test db
+        run: oca_init_test_database
+      # Coverage only on the nightly run. Other runs execute the same command as
+      # `oca_run_tests` (OCA/oca-ci, bin/oca_run_tests) without `coverage run --branch`:
+      # the tracer slows Python down and the report would be thrown away anyway.
+      # bash, not the container's default sh (dash): dash rejects `set -o pipefail`.
+      - name: Run tests
+        shell: bash
+        env:
+          COVERAGE: ${{ github.event_name == 'schedule' }}
+        run: |
+          if [ "$COVERAGE" = "true" ]; then
+            oca_run_tests
+            exit 0
+          fi
+          set -o pipefail
+          oca_wait_for_postgres
+          ADDONS=$(oca_list_addons_to_test)
+          if [ -z "$ADDONS" ]; then
+            exit 0
+          fi
+          unbuffer $(which odoo) \
+            -d ${PGDATABASE} \
+            -i ${ADDONS} \
+            --test-enable \
+            --http-interface=127.0.0.1 \
+            --stop-after-init | oca_checklog_odoo
+      - if: ${{ github.event_name == 'schedule' }}
+        uses: codecov/codecov-action@v6
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Update .pot files
+        run: oca_export_and_push_pot https://x-access-token:${{ secrets.GIT_PUSH_TOKEN }}@github.com/${{ github.repository }}
+        if: ${{ matrix.makepot == 'true' && github.event_name == 'push' && github.repository_owner == 'OCA' }}
