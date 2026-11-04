@@ -1,3 +1,11 @@
+## 19.0.1.0.1 (2026-11-04)
+
+**Changed**
+
+- The Cyrillic names of the localities are in the column `name@bg_BG` of
+  `data/res.city.csv`, loaded by Odoo as the Bulgarian translation; `bg.po` keeps only the
+  interface strings. The provinces stay in Latin: their name is not translatable in Odoo.
+
 ## 19.0.1.0.0 (2026-11-04)
 
 **Added**

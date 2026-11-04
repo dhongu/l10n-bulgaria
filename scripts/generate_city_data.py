@@ -11,10 +11,11 @@ Creative Commons Attribution 4.0). Columns: country, postal code, place name
 
 Writes:
 - l10n_bg_zip/data/res.city.csv: the localities, named in Latin with the official
-  Bulgarian transliteration (Transliteration Act, 2009);
-- l10n_bg_zip/i18n/bg.po: the Cyrillic names of the provinces and the localities,
-  then the translations of the interface (UI_TRANSLATIONS), and l10n_bg_zip.pot;
-- l10n_bg_zip/data/res_country_state_data.xml: the 28 provinces.
+  Bulgarian transliteration (Transliteration Act, 2009), with the Cyrillic name in the
+  column name@bg_BG (loaded by Odoo as the Bulgarian translation);
+- l10n_bg_zip/i18n/bg.po and l10n_bg_zip.pot: the interface strings (UI_TRANSLATIONS);
+- l10n_bg_zip/data/res_country_state_data.xml: the 28 provinces (in Latin: the name of a
+  province is not translatable in Odoo).
 """
 
 import csv
@@ -119,32 +120,18 @@ def main(source):
             cyrillic = place.split(" / ")[0].strip()
             rows.add((zip_code, cyrillic, PROVINCES[province]))
     counter = {}
-    translations = {}
     with open(ROOT / "data" / "res.city.csv", "w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle, lineterminator="\n")
-        writer.writerow(["id", "country_id:id", "zipcode", "name", "state_id:id"])
+        writer.writerow(["id", "country_id:id", "zipcode", "name", "name@bg_BG", "state_id:id"])
         for zip_code, cyrillic, state in sorted(rows):
             index = counter.get(zip_code, 0)
             counter[zip_code] = index + 1
             latin = transliterate(cyrillic)
-            xml_id = f"bg_city_{zip_code}_{index}"
-            writer.writerow([xml_id, "base.bg", zip_code, latin, f"state_bg_{state}"])
-            translations.setdefault(latin, (cyrillic, []))[1].append(xml_id)
-    for code, latin, cyrillic in STATES:
-        entry = translations.setdefault(latin, (cyrillic, []))
-        if entry[0] != cyrillic:
-            raise ValueError(f"{latin}: {entry[0]} (city) and {cyrillic} (province) differ")
-        entry[1].insert(0, f"state_bg_{code}")
+            writer.writerow([f"bg_city_{zip_code}_{index}", "base.bg", zip_code, latin, cyrillic, f"state_bg_{state}"])
     lines = [PO_HEADER]
     for reference, source, translation in UI_TRANSLATIONS:
         lines += ["#. module: l10n_bg_zip", f"#: {reference}", f'msgid "{po_escape(source)}"']
         lines += [f'msgstr "{po_escape(translation)}"', ""]
-    for latin, (cyrillic, xml_ids) in sorted(translations.items()):
-        lines.append("#. module: l10n_bg_zip")
-        for xml_id in xml_ids:
-            model = "res.country.state" if xml_id.startswith("state_bg_") else "res.city"
-            lines.append(f"#: model:{model},name:l10n_bg_zip.{xml_id}")
-        lines += [f'msgid "{po_escape(latin)}"', f'msgstr "{po_escape(cyrillic)}"', ""]
     (ROOT / "i18n" / "bg.po").write_text("\n".join(lines), encoding="utf-8")
     # the template: same entries, untranslated (a translation missing from it is ignored)
     template = [line if not line.startswith('msgstr "') else 'msgstr ""' for line in lines[1:]]
@@ -153,6 +140,7 @@ def main(source):
     xml = [
         '<?xml version="1.0" encoding="utf-8" ?>',
         "<odoo>",
+        # the name of a province is not translatable in Odoo: Latin only
         "    <!-- the 28 provinces (oblasti), ISO 3166-2:BG -->",
     ]
     for code, latin, _cyrillic in STATES:
@@ -165,7 +153,7 @@ def main(source):
         ]
     xml += ["</odoo>", ""]
     (ROOT / "data" / "res_country_state_data.xml").write_text("\n".join(xml), encoding="utf-8")
-    print(f"{len(rows)} cities, {len(translations)} names written")  # pylint: disable=print-used
+    print(f"{len(rows)} cities written")  # pylint: disable=print-used
 
 
 if __name__ == "__main__":

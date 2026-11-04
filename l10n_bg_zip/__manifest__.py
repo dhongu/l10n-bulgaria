@@ -3,7 +3,7 @@
 {
     "name": "Bulgaria - City from ZIP",
     "summary": "Bulgarian provinces and localities with postal code, filled in from the ZIP",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "author": "Terrabit",
     "website": "https://www.terrabit.ro",
     "category": "Localization",
