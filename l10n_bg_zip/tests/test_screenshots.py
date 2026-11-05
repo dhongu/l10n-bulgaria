@@ -113,7 +113,6 @@ class TestBgZipScreenshots(ScreenshotCase or object):
         cls.partner_haskovo = Partner.create(
             {
                 "name": "Primer Haskovo OOD",
-                "is_company": True,
                 "country_id": bulgaria.id,
                 "street": "ul. Rakovski 7",
                 "vat": "BG123456786",
@@ -122,7 +121,6 @@ class TestBgZipScreenshots(ScreenshotCase or object):
         cls.partner_gabrovo = Partner.create(
             {
                 "name": "Primer Gabrovo OOD",
-                "is_company": True,
                 "country_id": bulgaria.id,
                 "street": "ul. Opalchenska 12",
                 "vat": "BG175074752",

@@ -3,7 +3,7 @@ name: pre-commit
 on:
   pull_request:
     branches:
-      - "19.0*"
+      - "20.0*"
 
 
 jobs:

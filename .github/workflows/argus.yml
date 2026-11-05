@@ -9,7 +9,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - "19.0"
+      - "20.0"
     paths-ignore:
       - "**/i18n/**"
       - "**/readme/screenshots/**"

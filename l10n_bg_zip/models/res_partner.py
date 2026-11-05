@@ -6,11 +6,18 @@ import re
 import unicodedata
 
 import psycopg2
+from psycopg2 import errorcodes
 
 from odoo import api, models
-from odoo.service.model import PG_CONCURRENCY_ERRORS_TO_RETRY
 
 _logger = logging.getLogger(__name__)
+
+# odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY was removed in 20.0
+PG_CONCURRENCY_ERRORS_TO_RETRY = (
+    errorcodes.LOCK_NOT_AVAILABLE,
+    errorcodes.SERIALIZATION_FAILURE,
+    errorcodes.DEADLOCK_DETECTED,
+)
 
 RELINK_PARAM = "l10n_bg_zip.relink_last_partner_id"
 RELINK_BATCH = 5000
@@ -171,17 +178,17 @@ class ResPartner(models.Model):
         """Relink all the Bulgarian contacts, in batches, then deactivate the cron."""
         params = self.env["ir.config_parameter"].sudo()
         cron = self.env["ir.cron"]
-        last_id = int(params.get_param(RELINK_PARAM, 0))
+        last_id = params.get_int(RELINK_PARAM, 0)
         remaining = self.with_context(active_test=False).search_count(
             self._l10n_bg_relink_domain() + [("id", ">", last_id)]
         )
         while True:
             last_id, count = self._l10n_bg_relink_batch(last_id)
             if not count:
-                params.set_param(RELINK_PARAM, 0)
+                params.set_int(RELINK_PARAM, 0)
                 cron._commit_progress(remaining=0, deactivate=True)
                 return
-            params.set_param(RELINK_PARAM, last_id)
+            params.set_int(RELINK_PARAM, last_id)
             remaining = max(remaining - count, 0)
             if cron._commit_progress(count, remaining=remaining) <= 0:
                 return
