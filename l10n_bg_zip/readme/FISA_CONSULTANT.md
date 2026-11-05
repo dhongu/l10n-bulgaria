@@ -14,7 +14,7 @@ regiuni** (oblasti) și **lista localităților din Bulgaria** (circa 5.300 de r
 **codul poștal** și **regiunea** ei. Operatorul scrie doar codul poștal, iar Odoo completează
 localitatea și regiunea, pe fișa contactului și în orice formular care folosește regulile de cod
 poștal ale contactului (de exemplu detaliile AWB, cu `deltatech_delivery` de la versiunea
-19.0.6.12.3). Numele sunt în
+20.0.6.10.5). Numele sunt în
 alfabet latin, cu transliterarea oficială bulgărească; utilizatorii care lucrează în bulgară văd
 localitățile în chirilică. Regiunile rămân în latină: în Odoo, numele unei regiuni nu se
 traduce.
@@ -151,7 +151,7 @@ codul poștal din adresa contactului.
 | Modul | Rol în flux |
 |---|---|
 | `base_address_extended` | localitatea ca listă pe contact și lista **Localități** |
-| `deltatech_delivery` (opțional, de la 19.0.6.12.3) | în detaliile AWB (**Carrier Details**), codul poștal completează localitatea și regiunea după aceleași reguli: wizard-ul rulează toate regulile de cod poștal ale contactului |
+| `deltatech_delivery` (opțional, de la 20.0.6.10.5) | în detaliile AWB (**Carrier Details**), codul poștal completează localitatea și regiunea după aceleași reguli: wizard-ul rulează toate regulile de cod poștal ale contactului |
 | `l10n_ro_city`, `l10n_hu_zip`, `l10n_it_zip` (opțional) | aceeași completare din codul poștal, pentru România, Ungaria și Italia |
 
 **Ce e automat:** crearea regiunilor (sau preluarea celor existente) și încărcarea localităților
@@ -176,7 +176,7 @@ după instalare; instalarea limbii bulgare, dacă se vor numele localităților 
 - [ ] Cu limba bulgară instalată, un utilizator care lucrează în bulgară vede localitățile în
       chirilică (ex. *Пловдив*); regiunile rămân în latină.
 - [ ] Contactele din alte țări rămân neschimbate după acțiune.
-- [ ] (Cu `deltatech_delivery` 19.0.6.12.3 sau mai nou) în **Carrier Details**, la o livrare către Bulgaria, codul poștal
+- [ ] (Cu `deltatech_delivery` 20.0.6.10.5 sau mai nou) în **Carrier Details**, la o livrare către Bulgaria, codul poștal
       completează localitatea și regiunea.
 
 ## 9. Mesaje de eroare frecvente

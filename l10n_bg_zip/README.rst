@@ -17,7 +17,7 @@ Bulgaria - City from ZIP
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-dhongu%2Fl10n--bulgaria-lightgray.png?logo=github
-    :target: https://github.com/dhongu/l10n-bulgaria/tree/19.0/l10n_bg_zip
+    :target: https://github.com/dhongu/l10n-bulgaria/tree/20.0/l10n_bg_zip
     :alt: dhongu/l10n-bulgaria
 
 |badge1| |badge2| |badge3|
@@ -93,11 +93,11 @@ Usage
 The localities are named in Latin; with the Bulgarian language
 installed, users working in Bulgarian see them in Cyrillic.
 
-.. |Cities list filtered on the postal code 5300: 32 localities of the province Gabrovo (BG)| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/19.0/l10n_bg_zip/static/description/en/01_lista_localitati_cap.png
-.. |Contact in Bulgaria: the postal code 6300 fills in the city Haskovo (6300) and the state Haskovo (BG)| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/19.0/l10n_bg_zip/static/description/en/02_partener_cap_unic.png
-.. |Contact in Bulgaria: the postal code 5300 fills in the state Gabrovo (BG); the city field lists the localities of 5300| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/19.0/l10n_bg_zip/static/description/en/03_partener_cap_comun.png
-.. |Contacts list with Bulgarian contacts selected and the Actions menu open on Bulgaria: set city from ZIP| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/19.0/l10n_bg_zip/static/description/en/04_actiune_contacte_existente.png
-.. |Contact Klient Plovdiv after the action: ZIP 4000, city Plovdiv (4000) and state Plovdiv (BG)| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/19.0/l10n_bg_zip/static/description/en/05_contact_dupa_actiune.png
+.. |Cities list filtered on the postal code 5300: 32 localities of the province Gabrovo (BG)| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/20.0/l10n_bg_zip/static/description/en/01_lista_localitati_cap.png
+.. |Contact in Bulgaria: the postal code 6300 fills in the city Haskovo (6300) and the state Haskovo (BG)| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/20.0/l10n_bg_zip/static/description/en/02_partener_cap_unic.png
+.. |Contact in Bulgaria: the postal code 5300 fills in the state Gabrovo (BG); the city field lists the localities of 5300| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/20.0/l10n_bg_zip/static/description/en/03_partener_cap_comun.png
+.. |Contacts list with Bulgarian contacts selected and the Actions menu open on Bulgaria: set city from ZIP| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/20.0/l10n_bg_zip/static/description/en/04_actiune_contacte_existente.png
+.. |Contact Klient Plovdiv after the action: ZIP 4000, city Plovdiv (4000) and state Plovdiv (BG)| image:: https://raw.githubusercontent.com/dhongu/l10n-bulgaria/20.0/l10n_bg_zip/static/description/en/05_contact_dupa_actiune.png
 
 Changelog
 =========
@@ -153,6 +153,6 @@ Current maintainer:
 
 |maintainer-dhongu| 
 
-This module is part of the `dhongu/l10n-bulgaria <https://github.com/dhongu/l10n-bulgaria/tree/19.0/l10n_bg_zip>`_ project on GitHub.
+This module is part of the `dhongu/l10n-bulgaria <https://github.com/dhongu/l10n-bulgaria/tree/20.0/l10n_bg_zip>`_ project on GitHub.
 
 You are welcome to contribute.
