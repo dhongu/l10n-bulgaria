@@ -10,7 +10,7 @@ on:
   pull_request:
     types: [opened, synchronize, ready_for_review, reopened]
     branches:
-      - "19.0"
+      - "20.0"
     paths-ignore:
       - "**/i18n/**"
       - "**/readme/screenshots/**"
@@ -25,7 +25,8 @@ jobs:
   mentor:
     uses: terrabit-solutions/ci-agents/.github/workflows/mentor.yml@main
     with:
-      postgres-image: postgres:13
+      odoo-version: "20.0"
+      postgres-image: postgres:16
       # Outside the organization: GitHub-hosted runners, not the org's VPS ones.
       runs-on: '"ubuntu-latest"'
     # By name: `secrets: inherit` only works inside the organization.

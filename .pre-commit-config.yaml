@@ -56,7 +56,7 @@ repos:
           - --addons-dir=.
           - --org-name=dhongu
           - --repo-name=l10n-bulgaria
-          - --branch=19.0
+          - --branch=20.0
           - --if-source-changed
           - --keep-source-digest
           - --convert-fragments-to-markdown
